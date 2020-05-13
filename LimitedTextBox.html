@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<style type="text/css">
+		.container{
+			margin-top: 100px;
+		}
+		.row{
+			margin-top: 10px;
+		}
+		#sendbtn{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<label>Talk about yourself in 30 letters: </label>
+				<br>
+				<p id="count"></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+   				<textarea class="form-control" id="txt" rows="3" onkeypress="txtFun()"></textarea>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<button type="button" id="sendbtn" class="btn btn-primary">Send</button>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var count=0;
+		function txtFun() {
+			count++;
+			document.getElementById('count').innerHTML=count;
+			if(count>=30){
+				document.getElementById('sendbtn').style.display="block";
+				document.getElementById('txt').disabled=true;
+			}
+		}
+	</script>
+</body>
+</html>
